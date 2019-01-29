@@ -4,7 +4,7 @@ Push your bash commands to a influxDb
 ## Use:
     $ command -w parameters ; audit "a string Comment"
 
-## Requeriments:
+## Requirements:
 * Bash
 * Curl
 * an InfluxDb instance that we can reach on our shell

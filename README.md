@@ -49,7 +49,7 @@ we use "ls -lah" on a dir, just the ones we want (by using **; audit**)
 
 So we need to cath the important commands. Like this:
 
-### Campos necesarios
+### Modify the .bashrc
 ```bash
 trap 'export last_command=$this_command; this_command=$(echo $BASH_COMMAND|sed "s/\"//g")' DEBUG
 alias audit="bash $AUDIT_INSTALL_PATH/audit.sh $last_command "
@@ -79,7 +79,7 @@ Note the empty comment field. When you add a comment:
 ````bash
 echo Mistry ; audit "comment with spaces!"
 ````
-Esto se traduce a 
+This translates to...
 
 ````bash
 curl --silent -XPOST 'http://grafana.local:8086/write?db=data' --data-binary 'bash_audit_testing,user=lahire,hostname=myhost command="echo Mistry",comment="comment with spaces!",pwd="/home/lahire/bash_audit"
